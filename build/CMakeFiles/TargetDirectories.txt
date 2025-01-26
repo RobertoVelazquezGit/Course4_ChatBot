@@ -1,0 +1,3 @@
+/home/roberto/Devcpp/UdacityCpp/Curso4_ChatBot/build/CMakeFiles/membot.dir
+/home/roberto/Devcpp/UdacityCpp/Curso4_ChatBot/build/CMakeFiles/edit_cache.dir
+/home/roberto/Devcpp/UdacityCpp/Curso4_ChatBot/build/CMakeFiles/rebuild_cache.dir

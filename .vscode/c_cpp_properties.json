@@ -1,0 +1,73 @@
+
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include/c++/13",
+                "/usr/include/x86_64-linux-gnu/c++/13",
+                "/usr/include/c++/13/backward",
+                "/usr/lib/gcc/x86_64-linux-gnu/13/include",
+                "/usr/local/include",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include",               
+                "${workspaceFolder}/**",        // Todo el proyecto
+                "${workspaceFolder}/src",       // Directorio de código fuente
+                "/usr/include/wx-3.2",          // wxWidgets principal
+                "/usr/include/wx-3.2/wx",       // Subcarpeta wx
+                "/usr/share/doc/wx-common"      // Documentación wxWidgets
+            ],
+            "defines": [
+                "DEBUG"                         // Macro para depuración
+            ],
+            "compilerPath": "/usr/bin/g++",     // Usa g++ para C++
+            "cStandard": "c17",                // Estándar C
+            "cppStandard": "c++17",            // Estándar C++17
+            "intelliSenseMode": "linux-gcc-x64", // Modo IntelliSense
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/src",   // Código fuente
+                    "/usr/include",             // Cabeceras del sistema
+                    "/usr/include/wx-3.2",      // wxWidgets principal
+                    "/usr/include/wx-3.2/wx",   // Subcarpeta wx
+                    "/usr/share/doc/wx-common"  // Documentación wxWidgets
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
+
+
+// {
+//     "configurations": [
+//         {
+//             "name": "Linux",
+//             "includePath": [
+//                 "${workspaceFolder}/**",
+//                 "${workspaceFolder}/src",  // Asegúrate de incluir el directorio src aquí
+//                 "/usr/include/wx-3.2",
+//                 "/usr/include/wx-3.2/wx",
+//                 "/usr/share/doc/wx-common"
+//             ],
+//             "defines": [],
+//             "compilerPath": "/usr/bin/gcc",
+//             "cStandard": "c17",
+//             "cppStandard": "gnu++17",
+//             "intelliSenseMode": "linux-gcc-x64",
+//             "browse": {
+//                 "path": [
+//                     "${workspaceFolder}/src",  // Agregar el directorio src también aquí
+//                     // "/usr/include/c++/9",
+//                     "/usr/include",
+//                     "/usr/include/wx-3.2",
+//                     "/usr/include/wx-3.2/wx",
+//                     "/usr/share/doc/wx-common"
+//                 ],
+//                 "limitSymbolsToIncludedHeaders": true
+//             }
+//         }
+//     ],
+//     "version": 4
+// }
