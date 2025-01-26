@@ -11,7 +11,7 @@ GraphNode::~GraphNode()
     //// STUDENT CODE
     ////
 
-    delete _chatBot; 
+    // Because the owner is chatlogic delete _chatBot; 
 
     ////
     //// EOF STUDENT CODE

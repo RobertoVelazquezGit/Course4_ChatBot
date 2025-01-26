@@ -16,7 +16,7 @@ ChatLogic::ChatLogic() {
   ////
 
   // create instance of chatbot
-#ifdef MY_DEBUG
+#ifdef MY_IMAGES_PATH_DEBUG
   _chatBot = new ChatBot("./images/chatbot.png");
 #else
   _chatBot = new ChatBot("../images/chatbot.png");
