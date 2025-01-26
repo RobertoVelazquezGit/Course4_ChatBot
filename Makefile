@@ -19,7 +19,6 @@ debug:
 	cmake -DCMAKE_BUILD_TYPE=debug .. && \
 	make
 
-
 .PHONY: clean
 clean:
 	rm -rf build
