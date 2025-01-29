@@ -11,7 +11,9 @@ GraphNode::~GraphNode()
     //// STUDENT CODE
     ////
 
-    // Because the owner is chatlogic delete _chatBot; 
+    // TASK 0
+    // Reason of memory leak when leaving
+    // commented out _chatBot; 
 
     ////
     //// EOF STUDENT CODE
