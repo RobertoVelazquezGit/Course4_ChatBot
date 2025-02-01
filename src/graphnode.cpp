@@ -29,9 +29,16 @@ void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
     _parentEdges.push_back(edge);
 }
 
-void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
+// TASK 4
+// Commented out void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
+// Commented out{
+// Commented out    _childEdges.push_back(edge);
+// Commented out}
+void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge)
 {
-    _childEdges.push_back(edge);
+    // Ownership for GraphNode with std::move, memory will automatically be freed whith
+    // the instance
+    _childEdges.push_back(std::move(edge));
 }
 
 //// STUDENT CODE
@@ -54,8 +61,10 @@ GraphEdge *GraphNode::GetChildEdgeAtIndex(int index)
 {
     //// STUDENT CODE
     ////
-
-    return _childEdges[index];
+  
+    // TASK 4
+    // Commented out return _childEdges[index];
+    return _childEdges[index].get();
 
     ////
     //// EOF STUDENT CODE

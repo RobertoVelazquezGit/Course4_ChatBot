@@ -39,14 +39,16 @@ ChatLogic::~ChatLogic() {
 
   // delete all nodes
   // TASK 3
-  // for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it) {
-  //   delete *it;
-  // }
+  // Commented out for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it) {
+  // Commented out  delete *it;
+  // Commented out }
 
   // delete all edges
-  for (auto it = std::begin(_edges); it != std::end(_edges); ++it) {
-    delete *it;
-  }
+  // TASK 4   
+  // Owner is class GraphNode
+  // Commented out for (auto it = std::begin(_edges); it != std::end(_edges); ++it) {
+  // Commented out  delete *it;
+  // Commented out }
 
   ////
   //// EOF STUDENT CODE
@@ -198,24 +200,34 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename) {
                   });
 
               // create new edge
-              GraphEdge *edge = new GraphEdge(id);
+              // TASK 4
+              // Commented out GraphEdge *edge = new GraphEdge(id);
+              std::unique_ptr<GraphEdge> edge = std::make_unique<GraphEdge>(id);
 
               // TASK 3
               // Commented out edge->SetChildNode(*childNode);
               edge->SetChildNode(
                   (*childNode).get()); // childNode is the iterator,
                                        // (*childNode) is the smart pointer
+                                       // (*childNode).get() is the raw pointer to GraphEdge
               // Commented out edge->SetParentNode(*parentNode);
               edge->SetParentNode((*parentNode).get());
-
-              _edges.push_back(edge);
+               
+              // TASK 4 
+              // Commented out _edges.push_back(edge);
+              _edges.push_back(edge.get());
 
               // find all keywords for current node
               AddAllTokensToElement("KEYWORD", tokens, *edge);
 
               // store reference in child node and parent node
-              (*childNode)->AddEdgeToParentNode(edge);
-              (*parentNode)->AddEdgeToChildNode(edge);
+              // TASK 4
+              // Commented out (*childNode)->AddEdgeToParentNode(edge);
+              (*childNode)->AddEdgeToParentNode(edge.get());
+
+              // TASK 4
+              // Commented out (*parentNode)->AddEdgeToChildNode(edge);
+              (*parentNode)->AddEdgeToChildNode(std::move(edge));  // transfer ownership
             }
 
             ////

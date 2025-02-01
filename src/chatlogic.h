@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>  // TASK 3
 #include "chatgui.h"
 
 // forward declarations
@@ -21,6 +22,8 @@ private:
     // Commented out std::vector<GraphNode *> _nodes;    
     std::vector<std::unique_ptr<GraphNode>> _nodes;  
 
+    // TASK 4
+    // Raw pointers, owner is GraphNode
     std::vector<GraphEdge *> _edges;
 
 
