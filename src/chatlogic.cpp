@@ -16,15 +16,17 @@ ChatLogic::ChatLogic() {
   ////
 
   // create instance of chatbot
-#ifdef MY_IMAGES_PATH_DEBUG
-  _chatBot = new ChatBot("./images/chatbot.png");
-#else
-  _chatBot = new ChatBot("../images/chatbot.png");
-#endif
+  // TASK5 
+// Commented out #ifdef MY_IMAGES_PATH_DEBUG
+// Commented out  _chatBot = new ChatBot("./images/chatbot.png");
+// Commented out #else
+// Commented out  _chatBot = new ChatBot("../images/chatbot.png");
+// Commented out #endif
 
   // add pointer to chatlogic so that chatbot answers can be passed on to the
   // GUI
-  _chatBot->SetChatLogicHandle(this);
+  // TASK 5
+  // Commented out _chatBot->SetChatLogicHandle(this);
 
   ////
   //// EOF STUDENT CODE
@@ -35,7 +37,8 @@ ChatLogic::~ChatLogic() {
   ////
 
   // delete chatbot instance
-  delete _chatBot;
+  // TASK 5
+  // Commented out delete _chatBot;
 
   // delete all nodes
   // TASK 3
@@ -267,8 +270,20 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename) {
   }
 
   // add chatbot to graph root node
-  _chatBot->SetRootNode(rootNode);
-  rootNode->MoveChatbotHere(_chatBot);
+  // TASK 5 
+  // Instead of doing in constructor
+#ifdef MY_IMAGES_PATH_DEBUG
+  ChatBot chatBot("./images/chatbot.png");
+#else
+  ChatBot chatBot("../images/chatbot.png");
+#endif
+  chatBot.SetChatLogicHandle(this);
+
+  // TASK 5 
+  // Commented out _chatBot->SetRootNode(rootNode);
+  // Commented out rootNode->MoveChatbotHere(_chatBot);
+  chatBot.SetRootNode(rootNode);
+  rootNode->MoveChatbotHere(std::move(chatBot));  // transfer ownership
 
   ////
   //// EOF STUDENT CODE
